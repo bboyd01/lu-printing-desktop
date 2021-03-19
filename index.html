@@ -12,7 +12,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="https://kit.fontawesome.com/d687bf9a07.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
+    <script src="tableSearch.js"></script>
 </head>
 
 <body class="bg-light text-dark">
@@ -30,17 +35,82 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col mx-2 p-3 bg-dark text-light" style="height: 450px">
+        <div class="col-sm mx-2 mb-2 p-3 bg-1" style="height: 450px">
             <h5>Choose Files</h5>
 
 
         </div>
-        <div class="col mx-2 p-3 bg-dark text-light">
+        <div class="col-sm mx-2 mb-2 p-3 bg-1" style="height: 450px">
             <h5>Choose Printer</h5>
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Recents</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favorites</a>
+                </li>
+            </ul>
+            <!-- table thing w/ rows -->
+            <div class="my-2">
+                <!-- <table class="table my-0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                🔍Search printers
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
+                
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="🔍Find Printer" 
+                class="w-100 p-2">
+
+                
+                <div style="overflow-y: auto; height: 200px">
+                    <table id="myTable" class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>printer1</td>
+                            </tr>
+                            <tr>
+                                <td>printer2</td>
+                            </tr>
+                            <tr>
+                                <td>printer3</td>
+                            </tr>
+                            <tr>
+                                <td>printer4</td>
+                            </tr>
+                            <tr>
+                                <td>printer5</td>
+                            </tr>
+                            <tr>
+                                <td>printer6</td>
+                            </tr>
+                            <tr>
+                                <td>printer7</td>
+                            </tr>
+                            <tr>
+                                <td>printer8</td>
+                            </tr>
+                            <tr>
+                                <td>printer9</td>
+                            </tr>
+                            <tr>
+                                <td>printer10</td>
+                            </tr>
+                
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+            
+
+            
 
 
         </div>
-        <div class="col mx-2 p-3 bg-dark text-light">
+        <div class="col-sm mx-2 mb-2 p-3 bg-1" style="height: 450px">
             <h5>Print Summary</h5>
 
 
