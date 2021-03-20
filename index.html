@@ -15,12 +15,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
     <script src="selectPrinter.js"></script>
+    <script src="selectFiles.js"></script>
 </head>
 
 <body class="bg-light text-dark">
 
-<nav class="navbar sticky-top bg-light text-dark">
-    <a class="navbar-brand text-dark">LU Printing</a>
+<nav class="navbar sticky-top bg-light">
+    <a class="navbar-brand text-dark" href="#">LU Printing</a>
 
     <ul class="navbar-nav">
         <li>
@@ -38,14 +39,19 @@
 
             <!-- upload files input thing -->
                 <!-- put that here -->
+                <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01" multiple>
+                      <label class="custom-file-label" id="fileCount" for="inputGroupFile01">Choose file</label>
+                    </div>
+                  </div>
 
             <!-- table w/ files uploaded -->
             <div style="overflow-y: auto; height: 350px">
                 <table id="fileList" class="table table-hover mt-4">
                     <tbody>
-                        <tr class="file"><td>file1</td></tr>
-                        <tr class="file"><td>file2</td></tr>
-                        <tr class="file"><td>file3</td></tr>
+
                     </tbody>
                 </table>
             </div>
