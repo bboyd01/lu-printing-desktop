@@ -1,0 +1,11 @@
+.bg-1 {
+    background-color: rgb(190, 190, 190);
+}
+
+.printer {
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
+}
