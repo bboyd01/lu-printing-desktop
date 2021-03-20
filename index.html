@@ -16,6 +16,7 @@
     <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
     <script src="selectPrinter.js"></script>
     <script src="selectFiles.js"></script>
+    <script src="copies.js"></script>
 </head>
 
 <body class="bg-light text-dark">
@@ -48,10 +49,10 @@
                   </div>
 
             <!-- table w/ files uploaded -->
-            <div style="overflow-y: auto; height: 350px">
+            <div class="mt-2" style="overflow-y: auto; height: 350px">
                 <table id="fileList" class="table table-hover mt-4">
                     <tbody>
-
+                        <!-- Table auto populates with js after upload -->
                     </tbody>
                 </table>
             </div>
@@ -103,8 +104,12 @@
             <table class="table table-border table-hover">
                 <tr>
                     <td>
-                        Copies
-                        <span id="copies" class="float-right">1</span>
+                        <div class="form-group row">
+                            <label for="copyInput" class="col-2 col-form-label">Copies</label>
+                            <div class="col-10">
+                              <input class="form-control" type="number" value="1" placeholder="1" id="copyInput">
+                            </div>
+                          </div>
                     </td>
                 </tr>
             </table>
@@ -115,19 +120,19 @@
                     <tr>
                         <td>
                             Current balance: 
-                            <span id="balance" class="float-right">exampleText</span>
+                            <span id="balance" class="float-right">$30.00</span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Cost to print:
-                            <span id="cost" class="float-right">exampleText</span>
+                            <span id="cost" class="float-right">$0.00</span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Balance after printing:
-                            <span id="newBalance" class="float-right">exampleText</span>
+                            <span id="newBalance" class="float-right">$30.00</span>
                         </td>
                     </tr>
                 </tbody>

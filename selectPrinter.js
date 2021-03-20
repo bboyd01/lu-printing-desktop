@@ -1,7 +1,6 @@
 // on document load
 $(function () {
     
-
     // select a printer from the table
     $(".printer").click(function () {
         console.log($(this).next().text());
