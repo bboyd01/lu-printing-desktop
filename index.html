@@ -24,7 +24,7 @@
 
     <ul class="navbar-nav">
         <li>
-            <a class="nav-item text-dark">👤 First Last</a>
+            <a class="nav-item text-dark"><i class="fas fa-user-circle"></i> Firstname Lastname</a>
         </li>
     </ul>
 </nav>
@@ -33,13 +33,15 @@
 <div class="container-fluid">
     <div class="row">
         <!-- choose files box -->
-        <div class="col-sm mx-2 mb-2 p-3 bg-1" style="height: 550px">
-            <h5>Choose Files</h5>
+        <div class="col-sm mx-2 mb-2 p-3 bg-1 rounded" style="height: 550px">
+            <h5 class="text-center">Choose Files</h5>
 
+            <!-- upload files input thing -->
+                <!-- put that here -->
 
             <!-- table w/ files uploaded -->
             <div style="overflow-y: auto; height: 350px">
-                <table id="fileList" class="table table-hover">
+                <table id="fileList" class="table table-hover mt-4">
                     <tbody>
                         <tr class="file"><td>file1</td></tr>
                         <tr class="file"><td>file2</td></tr>
@@ -50,17 +52,14 @@
         </div>
 
         <!-- choose printer box -->
-        <div class="col-sm mx-2 mb-2 p-3 bg-1" style="height: 550px">
-            <h5>Choose Printer</h5>
+        <div class="col-sm mx-2 mb-2 p-3 bg-1 rounded" style="height: 550px">
+            <h5 class="text-center">Choose Printer</h5>
             <!-- recents & favorites tabs -->
-            <ul class="nav nav-pills nav-justified">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Recents</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Favorites</a>
-                </li>
-            </ul>
+            <div class="btn-group btn-group-justified mt-4 w-100">
+                <button id="recents" class="btn btn-primary btn-block w-50" type="button">Recents</button>
+                <button id="favorites" class="btn btn-outline-primary w-50" type="button">Favorites</button>
+            </div>
+            <!-- container of search box + printer list -->
             <div class="my-2">
                 <!-- search box -->
                 <div class="input-group input-focus">
@@ -71,19 +70,19 @@
                     placeholder="Find printer" onkeyup="searchPrinters()">
                 </div>
                 <!-- table w/ printer options -->
-                <div style="overflow-y: auto; height: 350px">
+                <div class="mt-2" style="overflow-y: auto; height: 350px">
                     <table id="printerList" class="table table-hover">
                         <tbody>
-                            <tr class="printer"><td>printer1</td></tr>
-                            <tr class="printer"><td>printer2</td></tr>
-                            <tr class="printer"><td>printer3</td></tr>
-                            <tr class="printer"><td>printer4</td></tr>
-                            <tr class="printer"><td>printer5</td></tr>
-                            <tr class="printer"><td>printer6</td></tr>
-                            <tr class="printer"><td>printer7</td></tr>
-                            <tr class="printer"><td>printer8</td></tr>
-                            <tr class="printer"><td>printer9</td></tr>
-                            <tr class="printer"><td>printer10</td></tr>
+                            <tr class="printer favorite"><td>Swang 1st Floor (by Room 112)</td></tr>
+                            <tr class="printer"><td>Bennett Basement Lobby</td></tr>
+                            <tr class="printer favorite"><td>High Rise 2nd Floor Lobby</td></tr>
+                            <tr class="printer"><td>Library 3rd Floor Lobby</td></tr>
+                            <tr class="printer"><td>McFarland 101 (lab)</td></tr>
+                            <tr class="printer"><td>Johnson 2nd Floor Lobby</td></tr>
+                            <tr class="printer"><td>Ezell 3rd Floor</td></tr>
+                            <tr class="printer"><td>Music Room</td></tr>
+                            <tr class="printer"><td>Sewell 2nd Floor Lobby</td></tr>
+                            <tr class="printer"><td>Burton 3rd Floor</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -91,45 +90,74 @@
         </div>
 
         <!-- print summary box -->
-        <div class="col-sm mx-2 mb-2 p-3 bg-1" style="height: 550px">
-            <h5>Print Summary</h5>
+        <div class="col-sm mx-2 mb-2 p-3 bg-1 rounded" style="height: 550px">
+            <h5 class="text-center">Print Summary</h5>
+
+            <!-- table with copies -->
+            <table class="table table-border table-hover">
+                <tr>
+                    <td>
+                        Copies
+                        <span id="copies" class="float-right">1</span>
+                    </td>
+                </tr>
+            </table>
 
             <!-- table w/ extra info -->
-            <table id="fileList" class="table table-hover">
+            <table id="summary" class="table table-hover mt-4">
                 <tbody>
-                    <tr class="mb-5">
-                        <td>
-                            Copies
-                            <span id="copies" class="float-right">1</span>
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             Current balance: 
-                            <span class="float-right">exampleText</span>
+                            <span id="balance" class="float-right">exampleText</span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Cost to print:
-                            <span class="float-right">exampleText</span>
+                            <span id="cost" class="float-right">exampleText</span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Balance after printing:
-                            <span class="float-right">exampleText</span>
+                            <span id="newBalance" class="float-right">exampleText</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="text-center">
-                <button class="btn btn-primary my-5" style="width: 200px; height: 60px;">
+                <button id="printButton" class="btn btn-primary my-5" type="button" data-toggle="modal" 
+                data-target="#myModal" style="width: 200px; height: 60px;" disabled>
                     Print
                 </button>
             </div>
+            <!-- modal popup feedback -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
             
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Success!</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+            
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Thank you for using LU Printing!
+                        </div>
+            
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>

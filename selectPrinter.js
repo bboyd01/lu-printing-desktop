@@ -1,21 +1,43 @@
 // on document load
 $(function () {
-    // lets you choose a printer
+    
+
+    // select a printer from the table
     $(".printer").click(function () {
         console.log($(this).next().text());
         if ($(this).hasClass("printerSelected")) {
             $(".printer").removeClass("printerSelected text-light bg-primary");
+            tryButton(false);
         } else {
             $(".printer").removeClass("printerSelected text-light bg-primary");
             $(this).addClass("printerSelected text-light bg-primary");
+            tryButton(true);
         }
     });
 
-    // allows you to focus the searchbar by clicking the icon
+    // focus the searchbar by clicking the icon
     $(".input-focus").click(function () {
         $(this).children("input").focus();
     });
 
+    // show recents
+    $("#recents").click(function() {
+        $(".printer").show();
+        $("#recents").addClass("btn-primary");
+        $("#favorites").removeClass("btn-primary");
+        $("#recents").removeClass("btn-outline-primary");
+        $("#favorites").addClass("btn-outline-primary");
+    });
+
+    // show favorites
+    $("#favorites").click(function() {
+        $(".printer").hide();
+        $(".favorite").show();
+        $("#favorites").addClass("btn-primary");
+        $("#recents").removeClass("btn-primary");
+        $("#favorites").removeClass("btn-outline-primary");
+        $("#recents").addClass("btn-outline-primary");
+    });
 });
 
 
@@ -39,6 +61,16 @@ function searchPrinters() {
                 tr[i].style.display = "none";
             }
         }
+    }
+}
+
+
+function tryButton(canPrint) {
+    // show print button if you can print
+    if (canPrint) {
+        $("#printButton").removeAttr("disabled");
+    } else {
+        $("#printButton").attr("disabled", "disabled");
     }
 }
 
