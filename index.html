@@ -16,12 +16,14 @@
     <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
     <script src="selectPrinter.js"></script>
     <script src="selectFiles.js"></script>
+    <script src="otherScripts.js"></script>
 </head>
 
 <body class="bg-light text-dark">
 
-<nav class="navbar sticky-top bg-light">
-    <a class="navbar-brand text-dark" href="#">LU Printing</a>
+<nav class="navbar py-4 px-5 bg-light">
+    <!-- <a class="navbar-brand text-dark" href="#">LU Printing</a> -->
+    <h6 class="display-4">LU Printing</h6>
 
     <ul class="navbar-nav">
         <li>
@@ -31,37 +33,36 @@
 </nav>
 
 
-<div class="container-fluid">
+<div id="mainContainer" class="container-fluid px-5">
     <div class="row">
         <!-- choose files box -->
-        <div class="col-sm mx-2 mb-2 p-3 bg-1 rounded" style="height: 550px">
+        <div id="column1" class="col-sm mx-2 mb-2 p-3 bg-1 rounded"> <!-- style="height: 550px"-->
             <h5 class="text-center">Choose Files</h5>
 
             <!-- upload files input thing -->
-                <!-- put that here -->
-                <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="inputGroupFile01"
-                        aria-describedby="inputGroupFileAddon01" multiple>
-                      <label class="custom-file-label" id="fileCount" for="inputGroupFile01">Choose file</label>
-                    </div>
-                  </div>
+            <div class="input-group pt-2">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01" multiple>
+                    <label class="custom-file-label" id="fileCount" for="inputGroupFile01">Choose file</label>
+                </div>
+            </div>
 
             <!-- table w/ files uploaded -->
-            <div style="overflow-y: auto; height: 350px">
+            <div style="overflow-y: auto; height: 300px">
                 <table id="fileList" class="table table-hover mt-4">
                     <tbody>
-
+                       
                     </tbody>
                 </table>
             </div>
         </div>
 
         <!-- choose printer box -->
-        <div class="col-sm mx-2 mb-2 p-3 bg-1 rounded" style="height: 550px">
+        <div id="column2" class="col-sm mx-2 mb-2 p-3 bg-1 rounded">
             <h5 class="text-center">Choose Printer</h5>
             <!-- recents & favorites tabs -->
-            <div class="btn-group btn-group-justified mt-4 w-100">
+            <div class="btn-group btn-group-justified pt-2 w-100">
                 <button id="recents" class="btn btn-primary btn-block w-50" type="button">Recents</button>
                 <button id="favorites" class="btn btn-outline-primary w-50" type="button">Favorites</button>
             </div>
@@ -76,7 +77,7 @@
                     placeholder="Find printer" onkeyup="searchPrinters()">
                 </div>
                 <!-- table w/ printer options -->
-                <div class="mt-2" style="overflow-y: auto; height: 350px">
+                <div class="mt-2" style="overflow-y: auto; height: 300px">
                     <table id="printerList" class="table table-hover">
                         <tbody>
                             <tr class="printer favorite"><td>Swang 1st Floor (by Room 112)</td></tr>
@@ -96,42 +97,46 @@
         </div>
 
         <!-- print summary box -->
-        <div class="col-sm mx-2 mb-2 p-3 bg-1 rounded" style="height: 550px">
+        <div id="column3" class="col-sm mx-2 mb-2 p-3 bg-1 rounded">
             <h5 class="text-center">Print Summary</h5>
 
-            <!-- table with copies -->
-            <table class="table table-border table-hover">
-                <tr>
-                    <td>
-                        Copies
-                        <span id="copies" class="float-right">1</span>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- table w/ extra info -->
-            <table id="summary" class="table table-hover mt-4">
-                <tbody>
+            <!-- table section -->
+            <div class="pt-2">
+                <!-- table with copies -->
+                <table class="table table-border table-hover">
                     <tr>
                         <td>
-                            Current balance: 
-                            <span id="balance" class="float-right">exampleText</span>
+                            Copies
+                            <span id="copies" class="float-right">1</span>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Cost to print:
-                            <span id="cost" class="float-right">exampleText</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Balance after printing:
-                            <span id="newBalance" class="float-right">exampleText</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                </table>
+                
+                <!-- table w/ extra info -->
+                <table id="summary" class="table table-hover mt-4">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Current balance:
+                                <span id="balance" class="float-right">exampleText</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Cost to print:
+                                <span id="cost" class="float-right">exampleText</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Balance after printing:
+                                <span id="newBalance" class="float-right">exampleText</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
 
             <div class="text-center">
                 <button id="printButton" class="btn btn-primary my-5" type="button" data-toggle="modal" 
@@ -156,7 +161,7 @@
                         </div>
             
                         <!-- Modal footer -->
-                        <div class="modal-footer">
+                        <div id="doneButton" class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
                         </div>
             
