@@ -35,15 +35,15 @@ function handleFiles(e) {
         var label = document.getElementById("fileCount");
         
         if (!e.target.files) return;
-
         var files = e.target.files;
         var table = document.getElementById("fileList");
-        if (files.length == 1){                                         // this doesn't update after it is initially set.
+        table.innerHTML = '' // Resets every time choose file is selected.
+        if (files.length == 1){                                        // grammar for selected text
                 label.innerHTML = files.length + " file selected";
         }else{
                 label.innerHTML = files.length + " files selected";
         }
-        for (var i = 0; i<files.length; i++){
+        for (var i = 0; i<files.length; i++){ // creates rows with file names in table HTML item
                 var f = files[i];
                 var row = table.insertRow(i);
                 // var x    = row.insertCell(0);
