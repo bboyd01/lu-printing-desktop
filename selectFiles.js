@@ -1,3 +1,28 @@
+/*
+
+                █▀▀▄░░░░░░░░░░░▄▀▀█
+                ░█░░░▀▄░▄▄▄▄▄░▄▀░░░█
+                ░░▀▄░░░▀░░░░░▀░░░▄▀
+                ░░░░▌░▄▄░░░▄▄░▐▀▀
+                ░░░▐░░█▄░░░▄█░░▌▄▄▀▀▀▀█ 
+                ░░░▌▄▄▀▀░▄░▀▀▄▄▐░░░░░░█
+                ▄▀▀▐▀▀░▄▄▄▄▄░▀▀▌▄▄▄░░░█
+                █░░░▀▄░█░░░█░▄▀░░░░█▀▀▀
+                ░▀▄░░▀░░▀▀▀░░▀░░░▄█▀
+                ░░░█░░░░░░░░░░░▄▀▄░▀▄
+                ░░░█░░░░░░░░░▄▀█░░█░░█
+                ░░░█░░░░░░░░░░░█▄█░░▄▀
+                ░░░█░░░░░░░░░░░████▀
+                ░░░▀▄▄▀▀▄▄▀▀▄▄▄█▀
+
+        me when I see code that isn't commented
+
+*/
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", init, false);
 
 
@@ -13,8 +38,7 @@ function handleFiles(e) {
 
         var files = e.target.files;
         var table = document.getElementById("fileList");
-        table.innerHTML = '';
-        if (files.length == 1){
+        if (files.length == 1){                                         // this doesn't update after it is initially set.
                 label.innerHTML = files.length + " file selected";
         }else{
                 label.innerHTML = files.length + " files selected";
@@ -23,15 +47,12 @@ function handleFiles(e) {
                 var f = files[i];
                 var row = table.insertRow(i);
                 // var x    = row.insertCell(0);
-                var name = row.insertCell(0);
-                row.classList.add("fileRow");
-                name.innerHTML = "<td>"+f.name+"</td>";
-                // x.innerHTML = "<td>X</td>";
-                
-                // row.click(function() {
-                //         row.visible = false;
-                //         console.log("a")
-                // });
+                // var name = row.insertCell(1);
+                //row.innerHTML = f.name;                       // changed this
+                row.innerHTML = "<td><i class=\"fas fa-file\"></i>   " + f.name + "</td>";      // to this, so it matches the formatting now
+                // x.innerHTML = "X";
+
+                // x.addEventListener("click", deleteRow(i));
                 
         }
 }

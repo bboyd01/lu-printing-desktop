@@ -3,7 +3,6 @@ $(function () {
     
     // select a printer from the table
     $(".printer").click(function () {
-        console.log($(this).next().text());
         if ($(this).hasClass("printerSelected")) {
             $(".printer").removeClass("printerSelected text-light bg-primary");
             tryButton(false);
@@ -37,6 +36,7 @@ $(function () {
         $("#favorites").removeClass("btn-outline-primary");
         $("#recents").addClass("btn-outline-primary");
     });
+
 });
 
 
@@ -72,5 +72,8 @@ function tryButton(canPrint) {
         $("#printButton").attr("disabled", "disabled");
     }
 }
+
+
+
 
 
