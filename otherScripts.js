@@ -2,7 +2,10 @@
 $(function() {
     // animation on page load
     $("#mainContainer").hide(1);
-    $("#mainContainer").slideDown(300);
+    $("#mainContainer").fadeIn(300);
+
+    // hide modal button on load
+    $("#mButton").hide();
 
     // if screen is small, then remove the empty space on the 1st box to accomodate the vertical layout
     var minWidth = 992;
@@ -15,12 +18,22 @@ $(function() {
 
     // press print button (add more to this later)
     $("#printButton").click(function () {
-        
+        var delayMs = 1000;
+        console.log("print");
+
+        // after delay, hide loading icon and show text
+        setTimeout(function() {
+            $("#mHead").addClass("text-success");
+            $("#mHead").html("Success <i class=\"far fa-check-circle\"></i>");
+            $("#mSpinner").hide();
+            $("#mBody").text("Thank you for using LU Printing!");
+            $("#mButton").show();
+        }, delayMs);
     });
 
-    // animation + refresh page when finished printing
-    $("#doneButton").click(function () {
-        $("#mainContainer").fadeOut(1000, function() {
+    // fadeOut and refresh page on modal close
+    $("#mButton").click(function () {
+        $("#mainContainer").fadeOut(300, function() {
             location.reload();
         });
         

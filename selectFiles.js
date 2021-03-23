@@ -1,28 +1,3 @@
-/*
-
-                █▀▀▄░░░░░░░░░░░▄▀▀█
-                ░█░░░▀▄░▄▄▄▄▄░▄▀░░░█
-                ░░▀▄░░░▀░░░░░▀░░░▄▀
-                ░░░░▌░▄▄░░░▄▄░▐▀▀
-                ░░░▐░░█▄░░░▄█░░▌▄▄▀▀▀▀█ 
-                ░░░▌▄▄▀▀░▄░▀▀▄▄▐░░░░░░█
-                ▄▀▀▐▀▀░▄▄▄▄▄░▀▀▌▄▄▄░░░█
-                █░░░▀▄░█░░░█░▄▀░░░░█▀▀▀
-                ░▀▄░░▀░░▀▀▀░░▀░░░▄█▀
-                ░░░█░░░░░░░░░░░▄▀▄░▀▄
-                ░░░█░░░░░░░░░▄▀█░░█░░█
-                ░░░█░░░░░░░░░░░█▄█░░▄▀
-                ░░░█░░░░░░░░░░░████▀
-                ░░░▀▄▄▀▀▄▄▀▀▄▄▄█▀
-
-        me when I see code that isn't commented
-
-*/
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", init, false);
 
 
@@ -49,7 +24,7 @@ function handleFiles(e) {
                 // var x    = row.insertCell(0);
                 // var name = row.insertCell(1);
                 //row.innerHTML = f.name;                       // changed this
-                row.innerHTML = "<td><i class=\"fas fa-file\"></i>   " + f.name + "</td>";      // to this, so it matches the formatting now
+                row.innerHTML = "<td><i class=\"fas fa-file\"></i>   " + f.name + "<i class=\"fas fa-trash-alt float-right\"></i></td>";      // to this, so it matches the formatting now
                 // x.innerHTML = "X";
 
                 // x.addEventListener("click", deleteRow(i));

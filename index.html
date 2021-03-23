@@ -39,14 +39,14 @@
     <div class="row">
         <!-- choose files box -->
         <div id="column1" class="col-sm mx-2 mb-2 p-3 bg-1 rounded"> <!-- style="height: 550px"-->
-            <h5 class="text-center">Choose Files</h5>
+            <h5 class="text-center"><i class="fas fa-file-upload"></i> Choose Files</h5>
 
             <!-- upload files input thing -->
             <div class="input-group pt-2">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile01"
                     aria-describedby="inputGroupFileAddon01" multiple>
-                    <label class="custom-file-label" id="fileCount" for="inputGroupFile01">Choose file</label>
+                    <label class="custom-file-label" id="fileCount" for="inputGroupFile01">Choose files</label>
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
 
         <!-- choose printer box -->
         <div id="column2" class="col-sm mx-2 mb-2 p-3 bg-1 rounded">
-            <h5 class="text-center">Choose Printer</h5>
+            <h5 class="text-center"><i class="fas fa-print"></i> Choose Printer</h5>
             <!-- recents & favorites tabs -->
             <div class="btn-group btn-group-justified pt-2 w-100">
                 <button id="recents" class="btn btn-primary btn-block w-50" type="button">Recents</button>
@@ -82,16 +82,16 @@
                 <div class="mt-2" style="overflow-y: auto; height: 300px">
                     <table id="printerList" class="table table-hover">
                         <tbody>
-                            <tr class="printer favorite"><td>Swang 1st Floor (by Room 112)</td></tr>
-                            <tr class="printer"><td>Bennett Basement Lobby</td></tr>
-                            <tr class="printer favorite"><td>High Rise 2nd Floor Lobby</td></tr>
-                            <tr class="printer"><td>Library 3rd Floor Lobby</td></tr>
-                            <tr class="printer"><td>McFarland 101 (lab)</td></tr>
-                            <tr class="printer"><td>Johnson 2nd Floor Lobby</td></tr>
-                            <tr class="printer"><td>Ezell 3rd Floor</td></tr>
-                            <tr class="printer"><td>Music Room</td></tr>
-                            <tr class="printer"><td>Sewell 2nd Floor Lobby</td></tr>
-                            <tr class="printer"><td>Burton 3rd Floor</td></tr>
+                            <tr class="printer favorite"><td>Swang 1st Floor (by Room 112)<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Bennett Basement Lobby<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer favorite"><td>High Rise 2nd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Library 3rd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>McFarland 101 (lab)<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Johnson 2nd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Ezell 3rd Floor<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Music Room<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Sewell 2nd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer"><td>Burton 3rd Floor<i class="far fa-star float-right star"></i></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -100,16 +100,17 @@
 
         <!-- print summary box -->
         <div id="column3" class="col-sm mx-2 mb-2 p-3 bg-1 rounded">
-            <h5 class="text-center">Print Summary</h5>
+            <h5 class="text-center"><i class="fas fa-info-circle"></i> Print Summary</h5>
 
             <!-- table with copies -->
-            <table class="table table-border table-hover">
+            <table class="table table-border table-hover mt-3">
                 <tr>
-                    <td>
+                    <td class="pr-0">
                         <div class="form-group row">
                             <label for="copyInput" class="col-2 col-form-label">Copies</label>
                             <div class="col-10">
-                              <input class="form-control" type="number" value="1" placeholder="1" id="copyInput">
+                              <input class="form-control float-right text-right px-0" type="number" 
+                              value="1" placeholder="1" id="copyInput" style="width: 20%">
                             </div>
                           </div>
                     </td>
@@ -153,18 +154,19 @@
             
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title">Success!</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 id="mHead" class="modal-title mx-auto">Working...</h2>
                         </div>
             
                         <!-- Modal body -->
-                        <div class="modal-body">
-                            Thank you for using LU Printing!
+                        <div id="mBody" class="modal-body text-center">
+                            <div class="d-flex justify-content-center">
+                                <div id="mSpinner" class="spinner-border" style="width: 4rem; height: 4rem;"></div>
+                            </div>
                         </div>
             
                         <!-- Modal footer -->
-                        <div id="doneButton" class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+                        <div id="mButton" class="modal-footer justify-content-center pt-5">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
                         </div>
             
                     </div>
