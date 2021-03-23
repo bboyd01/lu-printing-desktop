@@ -9,3 +9,6 @@
 .clickable {
     cursor: pointer;
 }
+.fileRow {
+    cursor:pointer;
+}

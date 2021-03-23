@@ -16,7 +16,9 @@
     <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
     <script src="selectPrinter.js"></script>
     <script src="selectFiles.js"></script>
+    <script src="copiesandCost.js"></script>
     <script src="otherScripts.js"></script>
+
 </head>
 
 <body class="bg-light text-dark">
@@ -100,43 +102,43 @@
         <div id="column3" class="col-sm mx-2 mb-2 p-3 bg-1 rounded">
             <h5 class="text-center">Print Summary</h5>
 
-            <!-- table section -->
-            <div class="pt-2">
-                <!-- table with copies -->
-                <table class="table table-border table-hover">
+            <!-- table with copies -->
+            <table class="table table-border table-hover">
+                <tr>
+                    <td>
+                        <div class="form-group row">
+                            <label for="copyInput" class="col-2 col-form-label">Copies</label>
+                            <div class="col-10">
+                              <input class="form-control" type="number" value="1" placeholder="1" id="copyInput">
+                            </div>
+                          </div>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- table w/ extra info -->
+            <table id="summary" class="table table-hover mt-4">
+                <tbody>
                     <tr>
                         <td>
-                            Copies
-                            <span id="copies" class="float-right">1</span>
+                            Current balance: 
+                            <span id="balance" class="float-right">$30.00</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cost to print:
+                            <span id="cost" class="float-right">$0.10</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Balance after printing:
+                            <span id="newBalance" class="float-right">$30.00</span>
                         </td>
                     </tr>
                 </table>
-                
-                <!-- table w/ extra info -->
-                <table id="summary" class="table table-hover mt-4">
-                    <tbody>
-                        <tr>
-                            <td>
-                                Current balance:
-                                <span id="balance" class="float-right">exampleText</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Cost to print:
-                                <span id="cost" class="float-right">exampleText</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Balance after printing:
-                                <span id="newBalance" class="float-right">exampleText</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
+           
 
             <div class="text-center">
                 <button id="printButton" class="btn btn-primary my-5" type="button" data-toggle="modal" 
