@@ -12,7 +12,9 @@
 
     <script src="https://kit.fontawesome.com/d687bf9a07.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="styles.css">
+
     <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
     <script src="selectPrinter.js"></script>
     <script src="selectFiles.js"></script>
@@ -25,7 +27,7 @@
 
 <nav class="navbar py-4 px-5 bg-light">
     <!-- <a class="navbar-brand text-dark" href="#">LU Printing</a> -->
-    <h6 class="display-4">LU Printing</h6>
+    <h6 class="display-4 text-primary">LU Printing</h6>
 
     <ul class="navbar-nav">
         <li>
@@ -38,7 +40,7 @@
 <div id="mainContainer" class="container-fluid px-5">
     <div class="row">
         <!-- choose files box -->
-        <div id="column1" class="col-sm mx-2 mb-2 p-3 bg-1 rounded"> <!-- style="height: 550px"-->
+        <div id="column1" class="col-sm-4 mx-2 mb-2 p-3 bg-1 rounded"> <!-- style="height: 550px"-->
             <h5 class="text-center"><i class="fas fa-file-upload"></i> Choose Files</h5>
 
             <!-- upload files input thing -->
@@ -51,8 +53,8 @@
             </div>
 
             <!-- table w/ files uploaded -->
-            <div style="overflow-y: auto; height: 300px">
-                <table id="fileList" class="table table-hover mt-4">
+            <div class="mt-2" style="overflow-y: auto; height: 350px">
+                <table id="fileList" class="table table-hover ">
                     <tbody>
                        
                     </tbody>
@@ -82,9 +84,9 @@
                 <div class="mt-2" style="overflow-y: auto; height: 300px">
                     <table id="printerList" class="table table-hover">
                         <tbody>
-                            <tr class="printer favorite"><td>Swang 1st Floor (by Room 112)<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer favorite"><td>Swang 1st Floor (by Room 112)<i class="fas fa-star float-right star"></i></td></tr>
                             <tr class="printer"><td>Bennett Basement Lobby<i class="far fa-star float-right star"></i></td></tr>
-                            <tr class="printer favorite"><td>High Rise 2nd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
+                            <tr class="printer favorite"><td>High Rise 2nd Floor Lobby<i class="fas fa-star float-right star"></i></td></tr>
                             <tr class="printer"><td>Library 3rd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
                             <tr class="printer"><td>McFarland 101 (lab)<i class="far fa-star float-right star"></i></td></tr>
                             <tr class="printer"><td>Johnson 2nd Floor Lobby<i class="far fa-star float-right star"></i></td></tr>
@@ -99,18 +101,18 @@
         </div>
 
         <!-- print summary box -->
-        <div id="column3" class="col-sm mx-2 mb-2 p-3 bg-1 rounded">
+        <div id="column3" class="col-sm-4 mx-2 mb-2 p-3 bg-1 rounded">
             <h5 class="text-center"><i class="fas fa-info-circle"></i> Print Summary</h5>
 
             <!-- table with copies -->
             <table class="table table-border table-hover mt-3">
                 <tr>
                     <td class="pr-0">
-                        <div class="form-group row">
-                            <label for="copyInput" class="col-2 col-form-label">Copies</label>
-                            <div class="col-10">
-                              <input class="form-control float-right text-right px-0" type="number" 
-                              value="1" placeholder="1" id="copyInput" style="width: 20%">
+                        <div class="form-group row px-0">
+                            <label for="copyInput" class="col col-form-label">Copies</label>
+                            <div class="col">
+                                <input class="form-control float-right text-right" type="number" value="1" placeholder="1" 
+                                id="copyInput" style="width: 4rem">
                             </div>
                           </div>
                     </td>
@@ -143,7 +145,7 @@
 
             <div class="text-center">
                 <button id="printButton" class="btn btn-primary my-5" type="button" data-toggle="modal" 
-                data-target="#myModal" style="width: 200px; height: 60px;" disabled>
+                data-target="#myModal" style="width: 10rem; height: 4rem;" disabled>
                     Print
                 </button>
             </div>

@@ -38,4 +38,39 @@ $(function() {
         });
         
     });
+
+    // select a printer from the table
+    $(".printer").click(function () {
+        if ($(this).hasClass("printerSelected")) {
+            $(".printer").removeClass("printerSelected text-light bg-primary");
+            checkButton(false);
+        } else {
+            $(".printer").removeClass("printerSelected text-light bg-primary");
+            $(this).addClass("printerSelected text-light bg-primary");
+            checkButton(true);
+        }
+    });
+
 });
+
+// update button based on whether or not you can print
+function checkButton(input) {
+    var canPrint = input;
+
+    // can print if printer is selected and file is up
+    // if ($("#printerList").next().has(".printerSelected") != "") {
+    //     canPrint = true;
+    //     console.log("1");
+    // } 
+    // if ($("#fileList").next().has("td") != "") {
+    //     canPrint = true;
+    //     console.log("2");
+    // } 
+
+    // show print button if you can print
+    if (canPrint) {
+        $("#printButton").removeAttr("disabled");
+    } else {
+        $("#printButton").attr("disabled", "disabled");
+    }
+}

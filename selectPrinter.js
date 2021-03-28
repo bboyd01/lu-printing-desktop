@@ -1,17 +1,7 @@
 // on document load
 $(function () {
     
-    // select a printer from the table
-    $(".printer").click(function () {
-        if ($(this).hasClass("printerSelected")) {
-            $(".printer").removeClass("printerSelected text-light bg-primary");
-            tryButton(false);
-        } else {
-            $(".printer").removeClass("printerSelected text-light bg-primary");
-            $(this).addClass("printerSelected text-light bg-primary");
-            tryButton(true);
-        }
-    });
+    
 
     // focus the searchbar by clicking the icon
     $(".input-focus").click(function () {
@@ -60,16 +50,6 @@ function searchPrinters() {
                 tr[i].style.display = "none";
             }
         }
-    }
-}
-
-
-function tryButton(canPrint) {
-    // show print button if you can print
-    if (canPrint) {
-        $("#printButton").removeAttr("disabled");
-    } else {
-        $("#printButton").attr("disabled", "disabled");
     }
 }
 
