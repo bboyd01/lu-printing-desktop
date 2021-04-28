@@ -24,15 +24,17 @@ function handleFiles(e) {
                 // var x    = row.insertCell(0);
                 // var name = row.insertCell(1);
                 //row.innerHTML = f.name;                       // changed this
-                row.innerHTML = "<td><i class=\"far fa-file\"></i>   " + f.name + "<i class=\"fas fa-minus-circle float-right\"></i></td>";      // to this, so it matches the formatting now
+                row.innerHTML = "<td class=\"file\"><i class=\"far fa-file\"></i>   " + f.name + "<i class=\"fas fa-minus-circle float-right\"></i></td>";      // to this, so it matches the formatting now
                 // <i class="fas fa-minus-circle"></i>
                 // x.innerHTML = "X";
 
                 // x.addEventListener("click", deleteRow(i));
                 
         }
-}
+}       
 
-// function deleteRow(i){
-//         i.visible = false;
-// }
+function deleteRow(element){
+        $(".file").click(function() {
+                
+        });
+}

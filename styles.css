@@ -12,3 +12,11 @@
 .fileRow {
     cursor:pointer;
 }
+
+td {
+  transition: transform .05s;
+  /* margin: 0 auto; */
+}
+td:hover {
+  transform: scale(1.01);
+}

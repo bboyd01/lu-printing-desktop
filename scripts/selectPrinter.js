@@ -1,8 +1,6 @@
 // on document load
 $(function () {
-    
-    
-
+    var alreadyClickedPrinter = false;
     // focus the searchbar by clicking the icon
     $(".input-focus").click(function () {
         $(this).children("input").focus();
@@ -27,6 +25,37 @@ $(function () {
         $("#recents").addClass("btn-outline-primary");
     });
 
+    // add or remove from favorites by clicking icon
+    $(".printer > td > i").click(function() {
+        var icon = $(this);
+        var printer = icon.parent().parent();
+        if (printer.hasClass("favorite")) {
+            printer.removeClass("favorite");
+            icon.addClass("far");
+            icon.removeClass("fas");
+        } else {
+            printer.addClass("favorite");
+            icon.addClass("fas");
+            icon.removeClass("far");
+        }
+        alreadyClickedPrinter = true;
+    });
+    
+    // select a printer from the table
+    $(".printer").click(function () {
+        if (!alreadyClickedPrinter) {
+            if ($(this).hasClass("printerSelected")) {
+                $(".printer").removeClass("printerSelected text-light bg-primary");
+                checkButton(false);
+            } else {
+                $(".printer").removeClass("printerSelected text-light bg-primary");
+                $(this).addClass("printerSelected text-light bg-primary");
+                checkButton(true);
+            }
+        }
+        alreadyClickedPrinter = false;
+    });
+    
 });
 
 

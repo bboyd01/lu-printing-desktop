@@ -8,15 +8,18 @@ $(function() {
     $("#mButton").hide();
 
     // if screen is small, then remove the empty space on the 1st box to accomodate the vertical layout
-    var minWidth = 992;
-    var elementHeight = "550"; // make sure this matches the column height in the HTML file or it'll be confusing
-    if (window.screen.width < minWidth) {
-        $("#column1").css("height","50%");
-    } else {
-        $("#column1").css("height", "");
+    var breakpoint = 576;
+    var width = window.innerWidth;
+    if (width < breakpoint) {
+        console.log("small")
+        $("#filesTable").height("auto");
+        $("#printerTable").height("150px");
+        $("#heading").css("font-size","200%");
+        //$("#filesTable").removeProp("height");
     }
+    console.log(width);
 
-    // press print button (add more to this later)
+    // press print button
     $("#printButton").click(function () {
         var delayMs = 1000;
         console.log("print");
@@ -39,17 +42,7 @@ $(function() {
         
     });
 
-    // select a printer from the table
-    $(".printer").click(function () {
-        if ($(this).hasClass("printerSelected")) {
-            $(".printer").removeClass("printerSelected text-light bg-primary");
-            checkButton(false);
-        } else {
-            $(".printer").removeClass("printerSelected text-light bg-primary");
-            $(this).addClass("printerSelected text-light bg-primary");
-            checkButton(true);
-        }
-    });
+    
 
 });
 
